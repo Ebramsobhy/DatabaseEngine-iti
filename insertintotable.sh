@@ -49,7 +49,7 @@ function insertdata(){
         # validate if PK
         if [[ $colPK == "yes" ]]; then
             # get all column data from Data/tableName
-            IFS=$'\n' read   -a dataLines <<< "$1"  # all table
+            IFS=$'\n' read   -a dataLines < "$1"  # all table
             #loop over column data to check pk if unique
             for j in "${!dataLines[@]}";
             do
